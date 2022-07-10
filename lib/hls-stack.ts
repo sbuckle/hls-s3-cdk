@@ -2,7 +2,6 @@ import { CfnOutput, RemovalPolicy, Stack, StackProps } from 'aws-cdk-lib';
 import { Construct } from 'constructs';
 import * as s3 from 'aws-cdk-lib/aws-s3';
 import * as iam from 'aws-cdk-lib/aws-iam';
-import { Effect } from 'aws-cdk-lib/aws-iam';
 
 export class HlsStack extends Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {
@@ -23,7 +22,7 @@ export class HlsStack extends Stack {
         actions: ['s3:GetObject'],
         resources: [bucket.arnForObjects('*')],
         principals: [new iam.StarPrincipal()],
-        effect: Effect.ALLOW
+        effect: iam.Effect.ALLOW
       })
     );
     bucket.addToResourcePolicy(
@@ -31,7 +30,7 @@ export class HlsStack extends Stack {
         actions: ['s3:GetObject'],
         resources: [bucket.arnForObjects('*')],
         principals: [new iam.StarPrincipal()],
-        effect: Effect.DENY,
+        effect: iam.Effect.DENY,
         conditions: {
           'StringNotLike': { 'aws:Referer': ['http://hlsbook.net/*'] }
         }
