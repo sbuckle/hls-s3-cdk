@@ -8,6 +8,8 @@ You'll also need to [install](https://docs.aws.amazon.com/cdk/v2/guide/getting_s
 
 ## Useful commands
 
-To create the bucket to your AWS account, clone this repository and run the following command from the root directory: `cdk deploy`.
+Clone this repository and run `npm install` to install the required dependencies.
+
+To create the bucket in your AWS account, run the following command: `cdk deploy`.
 
 To remove the bucket, run `cdk destroy`.
