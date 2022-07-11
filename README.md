@@ -4,7 +4,7 @@ This repository contains code that creates an S3 bucket that can be used to stre
 
 You'll need to change the domain name to match your own domain on lines 12 and 35 in `lib/hls-stack.ts`.
 
-You'll also need to [install](https://docs.aws.amazon.com/cdk/v2/guide/getting_started.html#getting_started_install) version of the AWS CDK.
+You'll also need to [install](https://docs.aws.amazon.com/cdk/v2/guide/getting_started.html#getting_started_install) version 2 of the AWS CDK.
 
 ## Useful commands
 
